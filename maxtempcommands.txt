@@ -1,0 +1,24 @@
+biadmin@bivm:~> hadoop fs -mkdir gladata
+biadmin@bivm:~> hadoop fs -copyFromLocal /home/biadmin/SumnerCountyTemp.dat gladata
+biadmin@bivm:~> hadoop fs -ls gladata
+biadmin@bivm:~> hadoop jar /home/biadmin/GLA.jar SumnerCountyTemp.dat gladata glaoutput
+biadmin@bivm:~> hadoop jar /home/biadmin/GLA.jar com.ibm.logic.Driver
+biadmin@bivm:~> hadoop jar /home/biadmin/GLA.jar com.ibm.logic.Driver gladata glaoutput
+biadmin@bivm:~> hadoop fs -ls glaoutput
+biadmin@bivm:~> hadoop fs -cat glaoutput/*0000
+
+
+OUTPUT
+01	367
+02	431
+03	530
+04	622
+05	704
+06	777
+07	785
+08	781
+09	755
+10	640
+11	543
+12	426
+
